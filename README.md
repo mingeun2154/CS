@@ -5,5 +5,3 @@
 	* 백트래킹
 		* [Einstein's Problem](https://github.com/mingeun2154/EinsteinsRiddle)
 * ## 데이터베이스
-
-* ## 개인 프로젝트
