@@ -11,12 +11,12 @@
 * ### [4. Parallelism](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#4-performance-via-parallelism)
 * ### [5. Pipelining](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#5-performance-via-pipelining)
 * ### [6. Prediction](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#6-performance-via-prediction)
-* ### [7. Hierarchy Memories](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#7-hierarchy-of-memories-)
+* ### [7. Hierarchy of Memories 🔥](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#7-hierarchy-of-memories-)
 * ### [8. Dependability via Redundancy](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#8-dependability-via-redundancy-1)
 
 #
 
-## 1. Design for Moore의 법칙
+## 1. Design for Moore's Law
 > *누울 자리를 보고 발을 뻗어라*    
 
 IC 의 성능이 18~24달 마다 2배가 된다. 컴퓨터 디자인은 수 년이 걸릴 수 있기 때문에 그 사이에 IC(반도체)의 성능이 두 배에서 4배까지도 향상될 수 있다.     
