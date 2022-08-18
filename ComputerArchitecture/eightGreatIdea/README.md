@@ -1,4 +1,4 @@
-# Eight Gread Ideas in Computer Architecture
+# Eight Great Ideas in Computer Architecture
 
 컴퓨터 구조를 관통하는 8개의 개념들이며 🔥 표시가 붙은 개념들은 **소프트웨어 개발에도 적용된다.**    
 (웹 개발에 직접적인 관련이 없다고 생각한 개념들은 간단히 소개만 하고 넘어갔다.)
