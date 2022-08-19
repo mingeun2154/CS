@@ -1,19 +1,25 @@
-# MIPS
-> 출처 : Computer Organization And Design 5th Edition
+# MIPS Architecture
+> 출처   
+> Computer Organization And Design 5th Edition    
+> Computer Systems : A Programmer's Perspective 3rd Edition
+
+이 글은 Computer Organization ... 책이 default 값이다.
 
 ## Contents		
-* ### [MIPS](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#mips)
-* ### [ABI](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#abi)      
+* ### [MIPS란 무엇인가](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#mips)
+* ### [ABI란 무엇인가](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#abi)      
 * ### [Instructions Set](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#instructions-set)      
 * ### [Register Usage](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#register-usage)      
 * ### [함수 호출 과정](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#procedure-calling)
+* ### [Stack Frame](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#stack-frame)
 
 #    
 
 ## MIPS
-이 책에서는 MIPS라는 **ISA**를 선택하여 컴퓨터구조를 설명하고 있다.    
+이 책(Computer Organization ...)에서는 MIPS라는 **ISA**를 선택하여 컴퓨터구조를 설명하고 있다.    
+Computer Systems 책에서는 x86-64 architecture를 기준으로 설명하고 있다.
+
 **ISA(Instruction Set Architecture)는 컴퓨터를 추상화한 모델(컴퓨터구조)이다.**    
-OS보다 
 ISA에 정의된 instruction set을 실행하는 device를 **implementation**이라고 한다. (ex. CPU)      
 
 ```
@@ -87,35 +93,50 @@ jr $ra
 함수를 호출하는 경우는 **두 가지 경우**로 일반화 할 수 있다.     
 [Leaf Procedure](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#leaf-procedure)과 [Nested Procedure](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#nested-procedure)이다.
 
-* ### Leaf Procedure
+### Leaf Procedure
 
-	```C
-	int leaf_example(int g, h, i, j) {
-		int f;
-		f = (g + h) - (i + j);
-		return f;
-	}	
-	// arguments g, ..., j in $a0, ..., $a3
-	// f in $s0 ($s는 stack에 저장되어야 한다.)
-	// result in $v0
-	```
-	
-	위의 C 코드는 아래와 같은 과정을 거친다.
-	<img src="./img/leaf.jpeg" alt="leaf">
+```C
+int leaf_example(int g, h, i, j) {
+	int f;
+	f = (g + h) - (i + j);
+	return f;
+}	
+// arguments g, ..., j in $a0, ..., $a3
+// f in $s0 ($s는 stack에 저장되어야 한다.)
+// result in $v0
+```
 
-	로컬에서 컴파일해본 결과 실제로는 아래와 같이 컴파일 되었다.    
-	왼쪽은 ARM architecture의 instruction이고 오른쪽은 rosetta를 거친 intel processor의 instruction이다.   
-	`$ gcc -S [c 코드] -o [assembly code 파일 이름]`
-	<img src="./img/real.png" alt="실제 결과">  
-	책에 나온대로 ARM 아키텍쳐의 instruction set이 intel보다 MIPS와 비슷했다. 일단 명령어의 이름부터가 비슷하다.   
-	intel instruction set은 예전에 시스템 소프트웨어 강의에서 본 적이 있다. 그게 intel processor 명령어였구나... 레지스터 이름도 똑같다.
-     
-	str, ldr, 을 각각 sw, lw에 대응시켜보았다.   
-	<img src="./img/arm.jpeg" alt="ARM instruction set 분석">   
-	나의 해석이 맞다면    
-	M1은 함수의 인자인 g, h, i, j를 모두 RAM에 저장하고, 다시 꺼내 쓰고 있다. 책의 MIPS에 비해 메모리에 자주 접근하고 있다.
+위의 C 코드는 아래와 같은 과정을 거친다.   
+
+<img src="./img/leaf.jpeg" alt="leaf">
+
+> $sp는 stack "top" 을 가리킨다. stack읕 주소값이 감소하는 방향으로 증가하기 때문에 가장 아래가 "top"이다.
+
+`$ gcc -S [c 코드] -o [assembly code 파일 이름]`      
+
+로컬에서 컴파일해본 결과 실제로는 아래와 같이 컴파일 되었다.    
+
+<img src="./img/real.png" alt="실제 결과">  
+
+> 왼쪽은 ARM architecture의 instruction이고 오른쪽은 Rosetta를 거친 intel processor의 instruction이다.   
+
+ARM 아키텍쳐(M1)의 instruction set은  MIPS와 비슷했다. 일단 명령어의 이름부터가 비슷하다.    
+	 
+M1의 instruction set에서  
+**str, ldr, 을 각각 sw, lw** 에 대응시켜보았다. (그림의 직사각형은 메모리의 stack 영역이다.)
+
+<img src="./img/arm.jpeg" alt="ARM instruction set 분석">   
+
+> M1 이 [leaf_example()](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#leaf-procedure) 함수를 실행하는 과정    
+
+함수의 인자인 g, h, i, j를 모두 RAM에 저장하고, 다시 꺼내 쓰고 있다. 책의 MIPS에 비해 메모리에 자주 접근하고 있다.
+
+%rsp는 stack pointer, %rbp는 frame pointer이다. x86은 frame pointer와 offset을 조합하여 함수의 지역변수에 접근한다.
+<img src="./img/x86.jpeg" alt="x86_64 분석">
+
+> x86_64가 [leaf_example()](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#leaf-procedure) 함수를 실행하는 과정    
 	
 
 * ### Nested Procedure
 
-## 5. subheading
+## Stack Frame
