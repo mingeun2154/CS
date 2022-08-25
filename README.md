@@ -11,7 +11,7 @@
 	* [정규형](https://github.com/mingeun2154/CS/tree/main/DB/NF)
 * ## 컴퓨터구조
 	* [컴퓨터 구조의 8가지 핵심 개념](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#eight-gread-ideas-in-computer-architecture)
-	* [MIPS](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS)
+	* [MIPS](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#mips-architecture)
 	* [실수의 표현](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/FloatingPoint)
 	* [Memory](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/Memory)
 * ## 운영체제 
