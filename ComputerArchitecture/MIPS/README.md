@@ -17,9 +17,11 @@
 
 ## MIPS
 이 책(Computer Organization ...)에서는 MIPS라는 **ISA**를 선택하여 컴퓨터구조를 설명하고 있다.    
+
 Computer Systems 책에서는 x86-64 architecture를 기준으로 설명하고 있다.
 
 **ISA(Instruction Set Architecture)는 컴퓨터를 추상화한 모델(컴퓨터구조)이다.**    
+
 ISA에 정의된 instruction set을 실행하는 device를 **implementation**이라고 한다. (ex. CPU)      
 
 ```
@@ -35,6 +37,7 @@ ARM 프로세서 칩은 2011년에만 90억개 이상이 생산되며 전 세계
 <img src="./img/ABI.jpeg" width="40%" alt="ABI">
 
 **OS 코드는 ABI를 활용하여 ISA의 instruction set으로써 HW를 제어**한다. (ABI는 OS와 ISA를 연결해준다.)    
+
 OS가 특정 ISA에 대한 ABI를 활용한다면 미래의 그 ISA의 implementation에서도 실행된다. => *binary compatibility*    
     
 ABI와 API를 비교하면 조금 더 직관적으로 이해할 수 있다.
@@ -51,13 +54,19 @@ ABI와 API를 비교하면 조금 더 직관적으로 이해할 수 있다.
 > 내용이 굉장히 많기 때문에 중요하다고 생각하는 개념들만 정리했다
 
 MIPS는 32×32-bit register file을 가진다. **(4byte register를 32개 가진다.)**     
+
 각각의 register들은 0~31로 indexing되고 32-bit data를 **word**라고 한다.
 > 64-bit processor는 register의 크기가 64bit이다.
 
 MIPS instruction에는 **R-Format**, **I-Format**, **J-Format** 세 가지 format이 있다.    
+
 우리가 사용하는 +,/,%,=,if,for 등의 모든 명령어들은 이런 몇 가지 안되는 format의 machine code로 번역되어 CPU에서 실행된다.    
+
 format이란 일종의 규칙이다. 32-bit 숫자들을 어떻게 해석할 것인지에 대한 규칙이다.   
-일관성 있는 규칙은 HW 구현을 간단하게 만들고 간단한 구현은 낮은 비용으로도 높은 성능을 달성하게 해준다.
+
+**일관성 있는 규칙**은 HW 구현을 간단하게 만들고 간단한 구현은 낮은 비용으로도 높은 성능을 달성하게 해준다.
+
+소프트웨어든 하드웨어든 **간단하고 일반적인 케이스에 대해 빠르게 동작**하는 것이 성능을 향상시키고 비용도 낮다. 여러 면에서 좋다.
 
 ## Register Usage
 
@@ -94,6 +103,7 @@ jr $ra
 [Leaf Procedure](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#leaf-procedure)과 [Nested Procedure](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#nested-procedure)이다.
 
 ### Leaf Procedure
+다른 함수를 호출하지 않는 함수.
 
 ```C
 int leaf_example(int g, h, i, j) {
@@ -131,12 +141,31 @@ M1의 instruction set에서
 
 함수의 인자인 g, h, i, j를 모두 RAM에 저장하고, 다시 꺼내 쓰고 있다. 책의 MIPS에 비해 메모리에 자주 접근하고 있다.
 
-%rsp는 stack pointer, %rbp는 frame pointer이다. x86은 frame pointer와 offset을 조합하여 함수의 지역변수에 접근한다.
-<img src="./img/x86.jpeg" alt="x86_64 분석">
+요즘은 그렇게 해도 되나보다...
 
-> x86_64가 [leaf_example()](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#leaf-procedure) 함수를 실행하는 과정    
-	
 
-* ### Nested Procedure
+### Nested Procedure
+중첩된 함수(함수가 함수를 호출한다.)
 
-## Stack Frame
+```C
+int fact(int n){
+	if(n<1)
+		return 1;
+	else 
+		return n*fact(n-1);
+}
+```
+> arguments in $a0  
+> result in $v0  
+
+<img src="./img/nested-mips-code.jpeg" width="80%" alt="non-leaf procedure">
+
+> instruction 옆의 숫자는 instructino이 저장된 주소를 나타낸다. 
+
+* `slti` - smaller than immediate
+* `jr` - 지정된 위치로 return
+* `jal` - 지정된 함수를 실행(매개변수로 전달된 값들이 레지스터에 자동으로 저장된다.)
+
+<img src="./img/nested-process.jpeg" width="80%" alt="non-leaf procedure 실행 과정">
+
+> non-leaf procedure이 실행되는 과정을 그림으로 표현해보았다.
