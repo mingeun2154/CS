@@ -2,12 +2,12 @@
 백트래킹 알고리즘을 사용한 풀이.
 
 ## Contents
-* [문제](https://github.com/mingeun2154/EinsteinsRiddle#문제)
-* [설계](https://github.com/mingeun2154/EinsteinsRiddle#설계)
-* [순열](https://github.com/mingeun2154/EinsteinsRiddle#순열)
-* [state space 정의](https://github.com/mingeun2154/EinsteinsRiddle#state-space)
-* [promising 함수](https://github.com/mingeun2154/EinsteinsRiddle#promising)
-* [실행 결과](https://github.com/mingeun2154/EinsteinsRiddle#result)
+* [문제](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#%EB%AC%B8%EC%A0%9C)
+* [설계](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#%EC%84%A4%EA%B3%84)
+* [순열](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#%EC%88%9C%EC%97%B4)
+* [state space 정의](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#state-space)
+* [promising 함수](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#promising)
+* [실행 결과](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#%EC%8B%A4%ED%96%89-%EA%B2%B0%EA%B3%BC)
 
 ## 문제   
 다음을 만족하는 다섯 개의 집과 주인에 대한 모든 정보를 구하여라.
