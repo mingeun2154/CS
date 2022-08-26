@@ -5,7 +5,7 @@
 
 ## Contents		
 * ### [인터넷의 구조](https://github.com/mingeun2154/CS/tree/main/Network/Internet#internet-1)
-* ### [캡슐화와 역캡슐화](https://github.com/mingeun2154/CS/tree/main/Network/Internet#데이터-전송-과정)      
+* ### [캡슐화와 역캡슐화](https://github.com/mingeun2154/CS/tree/main/Network/Internet#encapsulation-and-decapsulation)      
 
 #    
 
