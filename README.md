@@ -2,8 +2,8 @@
 소프트웨어(특히 웹 서비스) 설계와 개발의 밑바탕이 되는 이론들이다.
 
 * ## 네트워크 
-	* [TCP/IP 모델](https://github.com/mingeun2154/CS/tree/main/Network/TCPandIP) [미완성]
-	* [Internet](https://github.com/mingeun2154/CS/tree/main/Network/Internet) [미완성]
+	* [TCP/IP 모델](https://github.com/mingeun2154/CS/tree/main/Network/TCPandIP#osi-and-tcpip) 
+	* [Internet](https://github.com/mingeun2154/CS/tree/main/Network/Internet#internet) 
 	* [Client-Server Model](https://github.com/mingeun2154/CS/tree/main/Network/ClientServerModel) [미완성]
 * ## 데이터베이스
 	* [E-R Model](https://github.com/mingeun2154/CS/tree/main/DB/ER) [미완성]
