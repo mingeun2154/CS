@@ -4,7 +4,6 @@
 * ## 네트워크 
 	* [TCP/IP 모델](https://github.com/mingeun2154/CS/tree/main/Network/TCPandIP#osi-and-tcpip) 
 	* [Internet](https://github.com/mingeun2154/CS/tree/main/Network/Internet#internet) 
-	* [Client-Server Model](https://github.com/mingeun2154/CS/tree/main/Network/ClientServerModel) [미완성]
 * ## 데이터베이스
 	* [E-R Model](https://github.com/mingeun2154/CS/tree/main/DB/ER)
 	* [정규형](https://github.com/mingeun2154/CS/tree/main/DB/NF) [미완성]
