@@ -6,6 +6,7 @@
 	* [Internet](https://github.com/mingeun2154/CS/tree/main/Network/Internet#internet) 
 * ## 데이터베이스
 	* [E-R Model](https://github.com/mingeun2154/CS/tree/main/DB/ER)
+	* [SQL](https://github.com/mingeun2154/CS/tree/main/DB/SQL#sql) 
 	* [정규형](https://github.com/mingeun2154/CS/tree/main/DB/NF) [미완성]
 * ## 컴퓨터구조
 	* [컴퓨터 구조의 8가지 핵심 개념](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#eight-gread-ideas-in-computer-architecture)
