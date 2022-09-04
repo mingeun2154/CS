@@ -4,15 +4,16 @@
 > DATABASE SYSTEM CONCEPTS ⛵️ 7th edition
 
 ## Contents		
-* [동적 SQL](#)
-* [JDBC](#)
-* [DB 접근 과정](#)
+* [동적 SQL](https://github.com/mingeun2154/CS/tree/main/DB/JDBC#dynamic-sql)
+* [JDBC](https://github.com/mingeun2154/CS/tree/main/DB/JDBC#jdbc-1)
+* [DB 접근 과정](https://github.com/mingeun2154/CS/tree/main/DB/JDBC#how-to-use)
 
 #    
 
-
 ## Dynamic SQL
-범용 프로그래밍 언어는 함수나 메서드를 사용해서 DB 서버에 접속하고 통신할 수 있다. 동적 SQL은 프로그램이 **실행 중**에 문자열로 SQL 쿼리를 만들어 제출하고, 결과를 가져올 수 있도록 해준다.
+범용 프로그래밍 언어는 함수나 메서드를 사용해서 DB 서버에 접속하고 통신할 수 있다. 
+
+동적 SQL은 프로그램이 **실행 중**에 문자열로 SQL 쿼리를 만들어 제출하고, 결과를 가져올 수 있도록 해준다.
 
 JDBC는Java를 위한 동적 SQL 표준 API를 제공한다.
 
