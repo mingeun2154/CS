@@ -22,3 +22,5 @@
 * ## 알고리즘
 	* 백트래킹
 		* [Einstein's Problem](https://github.com/mingeun2154/CS/tree/main/Algorithm/BackTracking#einsteins-riddle)
+* ## 컴퓨터그래픽스
+	* [개발환경 구축](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#opengl-glfw)
