@@ -12,6 +12,7 @@
 * ## 컴퓨터구조
 	* [컴퓨터 구조의 8가지 핵심 개념](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#eight-gread-ideas-in-computer-architecture)
 	* [MIPS](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#mips-architecture)
+	* [번역과 실행](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/translate-start#translating-and-starting-program) 
 	* [실수의 표현](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/FloatingPoint) [미완성]
 	* [Memory](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/Memory) [미완성]
 * ## 운영체제 
