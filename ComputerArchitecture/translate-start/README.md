@@ -1,7 +1,7 @@
 # Translating and Starting a Program
 
 > ### references 🔗
-Computer Organization and Design 5th Edition    
+> Computer Organization and Design 5th Edition    
 
 **파일(disk에 존재)로 이루어진 C 프로그램이 실행가능한 프로그램이 되는 과정**은 크게 **네 단계**로 나눌 수 있다.
 
