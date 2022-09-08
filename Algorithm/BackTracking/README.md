@@ -48,7 +48,7 @@ pet : cats
 ```
 
 ## 순열
-### [코드](https://github.com/mingeun2154/EinsteinsRiddle/blob/main/exercise/combination.py)    
+### [코드 보기](https://github.com/mingeun2154/CS/blob/main/Algorithm/BackTracking/exercise/combination.py)
 (코드에는 1,2,3,4에 대한 순열을 구현하였지만 아래의 설명은 1,2,3에 대한 것임)   
 
 문제를 해결하려면 순열을 구현할 수 있어야 한다.
