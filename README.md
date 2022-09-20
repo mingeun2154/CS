@@ -1,7 +1,7 @@
 # 이론(Computer Science) 📚
 소프트웨어(특히 웹 서비스) 설계와 개발의 밑바탕이 되는 이론들이다.
 
-* ## 네트워크 
+* ## 컴퓨터네트워크 
 	* [TCP/IP 모델](https://github.com/mingeun2154/CS/tree/main/Network/TCPandIP#osi-and-tcpip) 
 	* [Internet](https://github.com/mingeun2154/CS/tree/main/Network/Internet#internet) 
 * ## 데이터베이스
@@ -9,6 +9,8 @@
 	* [SQL](https://github.com/mingeun2154/CS/tree/main/DB/SQL#sql) [작성중]
 	* [JDBC](https://github.com/mingeun2154/CS/tree/main/DB/JDBC#jdbc)
 	* [정규형](https://github.com/mingeun2154/CS/tree/main/DB/NF) [미완성]
+* ## 빅데이터처리및응용
+	* [분산 컴퓨팅](https://github.com/mingeun2154/CS/tree/main/BigData/distributed#distributed-computing-for-data-mining)
 * ## 컴퓨터구조
 	* [컴퓨터 구조의 8가지 핵심 개념](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#eight-gread-ideas-in-computer-architecture)
 	* [MIPS](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/MIPS#mips-architecture)
