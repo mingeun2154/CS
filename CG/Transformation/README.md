@@ -4,9 +4,9 @@
 > Interactive Computer Graphics
 
 ## Contents		
-* ### [3차원 강체의 방향](#)      
-* ### [3차원에서 임의의 축을 기준으로 회전](#)      
-* ### [Dual Matrix](#)
+* ### [3차원 강체의 방향](https://github.com/mingeun2154/CS/tree/main/CG/Transformation#euler-angles-for-3d-rotations)      
+* ### [3차원에서 임의의 축을 기준으로 회전](https://github.com/mingeun2154/CS/tree/main/CG/Transformation#axis-angle-rotation)      
+* ### [Dual Matrix](https://github.com/mingeun2154/CS/tree/main/CG/Transformation#dual-matrix)
 
 #    
 
@@ -56,3 +56,15 @@ Euler Angle이란 3차원에 놓인 rigid body(강체)의 방향을 기술하기
 	<img src="./img/result.jpeg" width="80%" alt="result">	
 
 	> (𝕧x)는 dual matrix이다.
+
+
+## Dual Matrix
+> skew-symmetric matrix라고도 한다.
+
+𝕧의 dual matrix와 𝕒의 곱은 𝕧x𝕒와 결과가 같다. Dual matrix를 사용하면 **외적을 행렬의 곱으로 표현**할 수 있다.
+
+𝕧=(v1, v2, v3)의 dual matrix는 다음과 같다.
+<img src="./img/dual-matrix.jpeg" width="80%" alt="dual matrix">
+
+> 🚨 내적도 두 행렬의 곱으로 표현 할 수 있다.     
+> 𝕒·𝕧 = trans(𝕒)𝕧 = trans(𝕧)𝕒
