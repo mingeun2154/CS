@@ -1,5 +1,5 @@
 # 이론(Computer Science) 📚
-소프트웨어(특히 웹 서비스) 설계와 개발의 밑바탕이 되는 이론들이다.
+일반적으로 개발의 밑바탕이 되는 이론
 
 * ## 컴퓨터네트워크 
 	* [Socket Programming](https://github.com/mingeun2154/CS/tree/main/Network/SocketProgramming#socket-programming) [작성중]
