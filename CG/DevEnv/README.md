@@ -1,35 +1,39 @@
-# 개발환경 구축
-
-> M1 macOS에서 진행
+# OpenGL 개발환경 구축
 
 ## Contents		
 * ### [OpenGL과 GLU](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#opengl-and-glu)      
 * ### [glfw이란 무엇인가](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#glfw)
 * ### [glfw 다운](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#install-glfw)
-* ### [빌드](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#build)
+* ### [macOS에서](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#macos)
+* ### [Linux에서](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#linux)
 
 #    
 
 ## OpenGL and GLU
 2D, 3D vector graphics를 **렌더링**하기 위한 corss-language, cross-platform API이다.
 
-오직 렌더링만을 위한 API이기 때문에 I/O에 대해서는 지원하지 않는다. 화면을 띄우거나, 키보드나 마우스로부터 입력을 받을 수 있는 함수는 지원하지 않는다.
+> interface만을 제공하기 때문이다. Platform마다 implementation이 다르다.
 
-대부분의 요즘 OS에 기본적으로 설치되어 따로 설치할 필요는 없다.
+오직 렌더링만을 위한 API이기 때문에 I/O에 대해서는 지원하지 않는다.   
+
+화면을 띄우거나, 키보드나 마우스로부터 입력을 받을 수 있는 함수는 지원하지 않는다.
 
 ## glfw
-OpenGL을 위한 오픈 소스 라이브러리이다. **context**를 관리하고, **창을 띄우고, 입력을 받고 이벤트를 처리**하는 API를 지원한다.
+OpenGL을 위한 오픈 소스 라이브러리이다.   
+
+**context**를 관리하고, **창을 띄우고, 입력을 받고 이벤트를 처리**하는 API를 지원한다.
 
 > context란 window(하나의 창)에 대한 상태 정보들이다.
 
-직접 설치해야한다.
+## macOS
+> M1 macbook air에서 진행
 
-## install glfw
+### install glfw
 
 `$ arch -arm64 brew install`
 
-## build
-[Makefile](#)을 사용해 빌드했다.
+### Makefile
+[Makefile 사용법](https://github.com/mingeun2154/skill/tree/main/script/Makefile#makefile)
 
 ```Makefile
 CC = g++
@@ -67,3 +71,58 @@ clean :
 
 * `FRAMEWORK` : OpenGL framework을 사용함을 알려준다.
 	> OpenGL은 시스템 경로에 포함되어 있기 때문에 따로 경로를 알려줄 필요는 없다.
+
+## Linux
+> Ubuntu 22.0.4
+
+### OpenGL, Mesa, glm, glfw 설치
+```
+$ sudo apt-get install freeglut3-dev libglu1-mesa-dev mesa-common-dev
+$ sudo apt-get install libglfw3-dev
+$ sudo apt-get install libglm-dev
+```
+
+위 명령어들을 실행하고 나면 /usr/include에 `GL`, `GLES`, `GLES2`, `GLES3`, `GLFW`, `glm` 등이 생성된다.
+
+> Mesa는 intel 하드웨어를 위한 OpenGL 구현체이다.
+
+### Makefile
+
+```
+CC = g++
+
+# libraries
+INC = -I/usr/include
+LIB_NAME = -lglfw -lglut -lGL -lGLU
+
+OBJS_P = practice.o glSetup.o
+SRCS_P = practice.cpp glSetup.cpp
+
+OBJS_E = exercise.o glSetup.o
+SRCS_E = exercise.cpp glSetup.cpp
+
+# executable file name
+EXERCISE = exercise
+PRACTICE = practice
+
+all: $(EXERCISE) $(PRACTICE)
+
+######################### build practice ######################### 
+$(PRACTICE) : $(OBJS_P)
+	$(CC) -o $@ $^ $(LIB_NAME)
+
+practice.o : practice.cpp
+	$(CC) -c $< $(INC)
+######################### build exercise ######################### 
+$(EXERCISE) : $(OBJS_E)
+	$(CC) -o $@ $^ $(LIB_NAME)
+
+exercise.o : exercise.cpp
+	$(CC) -c $< $(INC)
+################################################################## 
+glSetup.o : glSetup.cpp
+	$(CC) -c $< $(INC)
+
+clean : 
+	rm -rf *.o
+```
