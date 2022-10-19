@@ -7,10 +7,10 @@
 > [ARTIFICIAL INTELLIGENCE FOUNDATION OF COMPUTER AGENTS](https://nlp.jbnu.ac.kr/AI2019/Cambridge_ArtificialIntelligence.pdf)
 
 ## Contents		
-* ### [지도학습](#)      
-	* ### [분류](#)
-* ### [비지도학습](#)
-* ### [강화학습](#)
+* ### [지도학습](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#supervised-learning) 
+	* ### [분류](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#classification)
+* ### [비지도학습](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#unsupervised-learning)
+* ### [강화학습](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#reinforcement-learning)
 
 #    
 
@@ -25,7 +25,7 @@
 
 지도학습을 통해 해결할 수 있는 문제
 
-* [분류](#)
+* [분류](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#classification)
 
 ## unsupervised learning
 출력에 대한 정보가 없는 데이터들로부터 필요한 패턴을 추출한다. 
