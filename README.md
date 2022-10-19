@@ -29,3 +29,6 @@
 * ## 컴퓨터그래픽스
 	* [개발환경 구축](https://github.com/mingeun2154/CS/tree/main/CG/DevEnv#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95)
 	* [변환](https://github.com/mingeun2154/CS/tree/main/CG/Transformation#transformation)
+
+* ## 인공지능
+	* [기계학습](https://github.com/mingeun2154/CS/tree/main/AI/MachineLearning#machine-learning) [작성중]
