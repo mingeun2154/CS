@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
 
 	gettimeofday(start, NULL);
 
+	printf("\033[?25l"); 		// hide cursor
 	for(int j=0;j<CYCLE;j++)
 	{
 		for (int i=0; i<num; i++)
@@ -54,6 +55,7 @@ int main(int argc, char* argv[])
 
 		sum += (circle/count)*4;
 	}
+	printf("\033[?25h"); 		// reveal cursor
 
 	gettimeofday(end, NULL);
 	gap->tv_sec = end->tv_sec - start->tv_sec;
