@@ -1,5 +1,4 @@
 # 이론(Computer Science) 📚
-알아두면 언젠가 필요할 CS 지식들 (이해하지 못하면 기록하지 말자)
 
 * ## 컴퓨터네트워크 
 	* [Socket Programming](https://github.com/mingeun2154/CS/tree/main/Network/SocketProgramming#socket-programming) [작성중]
